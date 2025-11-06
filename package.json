@@ -8,9 +8,7 @@
     "server": "nodemon backend/server.js",
     "client": "npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd frontend && npm install && npm run build",
-    "vercel-build": "cd frontend && npm install && npm run build",
-    "postbuild": "ls -la frontend/dist || dir frontend\\dist || true"
+    "build": "cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
