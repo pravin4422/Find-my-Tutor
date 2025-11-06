@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import API from '../../api/axios';
 import { toast } from 'react-toastify';
 import AuthContext from '../../context/AuthContext';
-import { fixS3ImageUrl } from '../../utils/imageUtils';
+import { getImageUrl } from '../../utils/imageUtils';
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
@@ -96,8 +96,8 @@ const MyReviews = () => {
                 <div className="flex items-start gap-4 mb-4">
                   <img
                     src={user?.role === 'teacher' 
-                      ? (fixS3ImageUrl(review.student?.profilePicture) || 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png')
-                      : (fixS3ImageUrl(review.teacher?.profilePicture) || 'https://via.placeholder.com/60')
+                      ? (getImageUrl(review.student?.profilePicture) || 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png')
+                      : (getImageUrl(review.teacher?.profilePicture) || 'https://via.placeholder.com/60')
                     }
                     alt={user?.role === 'teacher' ? review.student?.name : review.teacher?.name}
                     className="w-16 h-16 rounded-full object-cover"

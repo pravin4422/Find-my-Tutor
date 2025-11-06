@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import  AuthContext  from "../context/AuthContext";
 import API from "../api/axios";
 import { toast } from "react-toastify";
-import { fixS3ImageUrl } from "../utils/imageUtils";
+import { getImageUrl } from "../utils/imageUtils";
 
 const Profile = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -147,7 +147,7 @@ const Profile = () => {
               <div className="flex items-center">
                 <div className="relative">
                   <img
-                    src={imagePreview || fixS3ImageUrl(user.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
+                    src={imagePreview || getImageUrl(user.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
                     alt={user.name}
                     className="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
                     onError={(e) => {
@@ -221,7 +221,7 @@ const Profile = () => {
               <div className="text-center">
                 <div className="mb-4">
                   <img
-                    src={imagePreview || fixS3ImageUrl(user.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
+                    src={imagePreview || getImageUrl(user.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
                     alt="Profile Preview"
                     className="w-32 h-32 rounded-full mx-auto border-4 border-gray-200 shadow-lg object-cover"
                     onError={(e) => {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import API from '../../api/axios';
 import { User, BookOpen, Star, Calendar, DollarSign, Users, TrendingUp, Award, Eye, GraduationCap, Clock, Monitor, Globe, FileText, MessageSquare, UserCheck } from 'lucide-react';
-import { fixS3ImageUrl } from '../../utils/imageUtils';
+import { getImageUrl } from '../../utils/imageUtils';
 
 const TeacherDashboard = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -87,7 +87,7 @@ const TeacherDashboard = () => {
             <div className="flex items-center">
               <div className="relative">
                 <img
-                  src={fixS3ImageUrl(user?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
+                  src={getImageUrl(user?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
                   alt={user?.name}
                   className="w-20 h-20 rounded-full border-4 border-white shadow-lg object-cover"
                   onError={(e) => {

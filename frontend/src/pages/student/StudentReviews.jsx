@@ -3,7 +3,7 @@ import AuthContext from '../../context/AuthContext';
 import API from '../../api/axios';
 import { toast } from 'react-toastify';
 import { Star, Edit, Trash2 } from 'lucide-react';
-import { fixS3ImageUrl } from '../../utils/imageUtils';
+import { getImageUrl } from '../../utils/imageUtils';
 
 const StudentReviews = () => {
   const { user } = useContext(AuthContext);
@@ -72,7 +72,7 @@ const StudentReviews = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
                       <img
-                        src={fixS3ImageUrl(review.teacher?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
+                        src={getImageUrl(review.teacher?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
                         alt={review.teacher?.name}
                         className="w-12 h-12 rounded-full mr-4"
                       />

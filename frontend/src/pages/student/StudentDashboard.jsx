@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import API from '../../api/axios';
 import { User, BookOpen, Star, MessageSquare, Send, Clock, CheckCircle, XCircle } from 'lucide-react';
-import { fixS3ImageUrl } from '../../utils/imageUtils';
+import { getImageUrl } from '../../utils/imageUtils';
 
 const StudentDashboard = () => {
   const { user } = useContext(AuthContext);
@@ -114,7 +114,7 @@ const StudentDashboard = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
               <img
-                src={fixS3ImageUrl(user?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
+                src={getImageUrl(user?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
                 alt={user?.name}
                 className="relative w-20 h-20 rounded-full border-3 border-white shadow-lg object-cover group-hover:scale-105 transition-transform duration-300"
                 onError={(e) => {

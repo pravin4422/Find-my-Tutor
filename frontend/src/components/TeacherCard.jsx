@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { fixS3ImageUrl } from '../utils/imageUtils';
+import { getImageUrl } from '../utils/imageUtils';
 import StarRating from './StarRating';
 
 const TeacherCard = ({ teacher }) => {
@@ -10,7 +10,7 @@ const TeacherCard = ({ teacher }) => {
             {/* Profile Picture with Status Indicator */}
             <div className="relative w-28 h-28 mx-auto mb-6">
                 <img 
-                    src={fixS3ImageUrl(teacher.profilePicture) || defaultIcon} 
+                    src={getImageUrl(teacher.profilePicture) || defaultIcon} 
                     alt={teacher.name} 
                     className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-lg group-hover:border-blue-200 transition-all duration-300" 
                     onError={(e) => {

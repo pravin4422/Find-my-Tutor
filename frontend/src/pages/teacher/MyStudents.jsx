@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { User, BookOpen, Phone, MapPin, Calendar, Mail } from 'lucide-react';
 import AuthContext from '../../context/AuthContext';
 import API from '../../api/axios';
-import { fixS3ImageUrl } from '../../utils/imageUtils';
+import { getImageUrl } from '../../utils/imageUtils';
 
 const MyStudents = () => {
   const { user } = useContext(AuthContext);
@@ -60,7 +60,7 @@ const MyStudents = () => {
               <div key={request._id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
                 <div className="flex items-center space-x-4 mb-4">
                   <img
-                    src={fixS3ImageUrl(request.student?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
+                    src={getImageUrl(request.student?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
                     alt={request.student?.name}
                     className="w-16 h-16 rounded-full object-cover border-2 border-gray-200"
                     onError={(e) => {

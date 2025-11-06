@@ -134,8 +134,8 @@ exports.updateProfile = asyncHandler(async (req, res) => {
 
     // Handle profile picture upload if file is provided
     if (req.file) {
-      const profilePictureUrl = req.file.location || `http://localhost:5000/uploads/${req.file.filename}`;
-      user.profilePicture = profilePictureUrl;
+      const base64Image = `data:${req.file.mimetype};base64,${req.file.buffer.toString('base64')}`;
+      user.profilePicture = base64Image;
     }
 
     const updatedUser = await user.save();
@@ -159,8 +159,8 @@ exports.updateProfilePicture = asyncHandler(async (req, res) => {
 
   if (user) {
     if (req.file) {
-      const profilePictureUrl = req.file.location || `http://localhost:5000/uploads/${req.file.filename}`;
-      user.profilePicture = profilePictureUrl;
+      const base64Image = `data:${req.file.mimetype};base64,${req.file.buffer.toString('base64')}`;
+      user.profilePicture = base64Image;
       
       const updatedUser = await user.save();
       

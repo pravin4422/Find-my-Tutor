@@ -215,11 +215,10 @@ exports.updateTeacherProfile = asyncHandler(async (req, res) => {
       : req.body.teachingMode;
   }
   
-  // Handle S3 image upload
+  // Handle image upload as base64
   if (req.file) {
-    // Use the S3 URL or local file path
-    teacher.profilePicture = req.file.location || `http://localhost:5000/uploads/${req.file.filename}`;
-
+    const base64Image = `data:${req.file.mimetype};base64,${req.file.buffer.toString('base64')}`;
+    teacher.profilePicture = base64Image;
   }
 
   const updatedTeacher = await teacher.save();

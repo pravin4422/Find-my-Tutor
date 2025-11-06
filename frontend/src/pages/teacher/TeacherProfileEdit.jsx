@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import  AuthContext  from "../../context/AuthContext";
 import API from "../../api/axios";
 import { toast } from "react-toastify";
-import { fixS3ImageUrl } from "../../utils/imageUtils";
+import { getImageUrl } from "../../utils/imageUtils";
 
 const TeacherProfileEdit = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -237,7 +237,7 @@ const TeacherProfileEdit = () => {
               </label>
               <div className="flex items-center gap-4">
                 <img
-                  src={imagePreview || fixS3ImageUrl(user?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
+                  src={imagePreview || getImageUrl(user?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
                   alt="Profile"
                   className="w-24 h-24 rounded-full object-cover border-2 border-gray-300"
                   onError={(e) => {

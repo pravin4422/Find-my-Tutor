@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Clock, CheckCircle, XCircle, User, BookOpen, MessageSquare } from 'lucide-react';
 import AuthContext from '../../context/AuthContext';
 import API from '../../api/axios';
-import { fixS3ImageUrl } from '../../utils/imageUtils';
+import { getImageUrl } from '../../utils/imageUtils';
 
 const StudentRequests = () => {
   const { user } = useContext(AuthContext);
@@ -93,7 +93,7 @@ const StudentRequests = () => {
                 <div className="flex items-start justify-between">
                   <div className="flex items-start space-x-4">
                     <img
-                      src={fixS3ImageUrl(request.teacher?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
+                      src={getImageUrl(request.teacher?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
                       alt={request.teacher?.name}
                       className="w-16 h-16 rounded-full object-cover border-2 border-gray-200"
                       onError={(e) => {

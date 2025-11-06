@@ -24,15 +24,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Create uploads directory if using local storage
-const fs = require('fs');
-const uploadsDir = './uploads';
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
-}
-
-// Serve uploaded files statically if using local storage
-app.use('/uploads', express.static('uploads'));
+// Images are now stored as base64 in database
 
 // API Routes
 app.get('/', (req, res) => {

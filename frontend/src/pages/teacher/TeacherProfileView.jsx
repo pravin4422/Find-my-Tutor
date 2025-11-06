@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import API from '../../api/axios';
 import { Star, MapPin, Clock, DollarSign, BookOpen, Users } from 'lucide-react';
-import { fixS3ImageUrl } from '../../utils/imageUtils';
+import { getImageUrl } from '../../utils/imageUtils';
 import AuthContext from '../../context/AuthContext';
 import { toast } from 'react-toastify';
 import SendRequestModal from '../../components/SendRequestModal';
@@ -118,7 +118,7 @@ const TeacherProfileView = () => {
               <div className="text-center">
                 <div className="relative w-32 h-32 mx-auto mb-4">
                   <img
-                    src={fixS3ImageUrl(teacher.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
+                    src={getImageUrl(teacher.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
                     alt={teacher.name}
                     className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg object-cover"
                     onError={(e) => {
