@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' 
-    ? 'https://your-backend-url.com/api' 
-    : 'http://localhost:5000/api',
+  baseURL: '/api',
   withCredentials: true, // ⚠️ crucial for login/register
 });
 // This function will be called before every request
