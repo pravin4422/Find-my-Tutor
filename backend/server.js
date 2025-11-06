@@ -18,12 +18,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    'https://find-my-tutor-mk1o.vercel.app',
-    'https://find-my-tutor-mk1o-git-mains-pravin-s-projects-9942d8e3.vercel.app',
-    'https://find-my-tutor-mk1o-dy37bpp8k-pravin-s-projects-9942d8e3.vercel.app',
-    'http://localhost:5173'
-  ],
+  origin: config.CLIENT_URL || 'http://localhost:5173',
   credentials: true
 }));
 app.use(express.json());
