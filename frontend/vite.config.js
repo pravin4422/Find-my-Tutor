@@ -9,6 +9,7 @@ export default defineConfig({
     tailwindcss()
   ],
   build: {
-    outDir: '../public'
+    outDir: 'dist',
+    emptyOutDir: true
   }
 })
