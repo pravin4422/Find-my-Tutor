@@ -9,7 +9,8 @@
     "client": "npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd frontend && npm install && npm run build",
-    "vercel-build": "npm run build"
+    "vercel-build": "cd frontend && npm install && npm run build",
+    "postbuild": "ls -la frontend/dist || dir frontend\\dist || true"
   },
   "keywords": [],
   "author": "",
