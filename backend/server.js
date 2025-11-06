@@ -61,11 +61,17 @@ app.use(errorHandler);
 
 const PORT = config.PORT || 5000;
 
-app.listen(PORT, () => {
-
-});
+// Only start server if not in Vercel environment
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
 
 process.on('unhandledRejection', (err) => {
-
+  console.log('Unhandled Promise Rejection:', err.message);
   process.exit(1);
 });
+
+// Export for Vercel
+module.exports = app;
