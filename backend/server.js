@@ -18,7 +18,10 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: "https://find-my-tutor-ypii.vercel.app",
+  origin: [
+    "https://find-my-tutor-ypii.vercel.app",
+    "https://find-my-tutor-ypii-brb3csdkm-pravin-s-projects-9942d8e3.vercel.app"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
