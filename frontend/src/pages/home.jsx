@@ -176,8 +176,6 @@ const Home = () => {
         <section className="relative bg-gradient-to-r from-blue-900 via-purple-900 to-blue-900 text-white py-20 overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20"></div>
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
           </div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

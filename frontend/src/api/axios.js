@@ -1,10 +1,8 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' 
-    ? 'https://your-backend-url.com/api' 
-    : 'http://localhost:5000/api',
-  withCredentials: true, // ⚠️ crucial for login/register
+  baseURL: `${import.meta.env.VITE_API_URL}/api`,
+  withCredentials: true,
 });
 // This function will be called before every request
 API.interceptors.request.use((req) => {

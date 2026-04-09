@@ -35,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: config.CLIENT_URL, // must be set in Vercel env
+    origin: "https://find-my-tutor-ypii.vercel.app",
     credentials: true,
   })
 );
