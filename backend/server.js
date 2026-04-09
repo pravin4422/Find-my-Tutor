@@ -18,10 +18,11 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: [
-    "https://find-my-tutor-ypii.vercel.app",
-    "https://find-my-tutor-ypii-brb3csdkm-pravin-s-projects-9942d8e3.vercel.app"
-  ],
+  origin: (origin, callback) => {
+    const allowed = /^https:\/\/find-my-tutor[\w-]*\.vercel\.app$/;
+    if (!origin || allowed.test(origin)) callback(null, true);
+    else callback(new Error("Not allowed by CORS"));
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
