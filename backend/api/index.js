@@ -1,5 +1,5 @@
 /**
- * Entry point for Tutor Finder Backend (Vercel compatible)
+ * Entry point for Tutor Finder Backend (Render compatible)
  */
 
 require("dotenv").config();
@@ -21,22 +21,37 @@ const requestRoutes = require("../routes/requestRoutes");
 // Initialize Express
 const app = express();
 
-/**
- * Connect to MongoDB
- * IMPORTANT:
- * - Vercel serverless functions may re-run
- * - Your connectDB() should internally handle already-open connections
- */
-connectDB();
+// Connect to MongoDB
+connectDB().catch(err => console.error('DB connection failed:', err));
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// CORS Configuration
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  "https://find-my-tutor-ypii.vercel.app",
+  "http://localhost:5173",
+  "http://localhost:5174"
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: "https://find-my-tutor-ypii.vercel.app",
+    origin: (origin, callback) => {
+      // Allow requests with no origin (mobile apps, Postman, etc.)
+      if (!origin) return callback(null, true);
+      
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.log('CORS blocked origin:', origin);
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
 
@@ -69,6 +84,7 @@ app.get("/health", (req, res) => {
     status: "healthy",
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
+    environment: process.env.NODE_ENV || 'development'
   });
 });
 
@@ -76,17 +92,13 @@ app.get("/health", (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-/**
- * IMPORTANT:
- * - DO NOT use app.listen() in Vercel
- * - Vercel manages the server
- */
-if (!process.env.VERCEL) {
+// Export app for Render
+module.exports = app;
+
+// Start server only if not imported
+if (require.main === module) {
   const PORT = config.PORT || 5000;
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 }
-
-// Export app for Vercel
-module.exports = app;
