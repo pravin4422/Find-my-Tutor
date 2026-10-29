@@ -17,10 +17,15 @@ const app = express();
 
 connectDB();
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  process.env.FRONTEND_URL_PROD,
+].filter(Boolean);
+
 app.use(cors({
   origin: (origin, callback) => {
-    const allowed = /^https:\/\/find-my-tutor[\w-]*\.vercel\.app$/;
-    if (!origin || allowed.test(origin)) callback(null, true);
+    const allowedDev = /^http:\/\/localhost:\d+$/;
+    if (!origin || allowedDev.test(origin) || allowedOrigins.includes(origin)) callback(null, true);
     else callback(new Error("Not allowed by CORS"));
   },
   methods: ["GET", "POST", "PUT", "DELETE"],

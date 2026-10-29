@@ -96,7 +96,7 @@ const TeacherRequests = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50 py-8 pt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Student Requests</h1>
@@ -120,18 +120,18 @@ const TeacherRequests = () => {
             {requests.map((request) => (
               <div key={request._id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                 <div className="flex items-start justify-between">
-                  <div className="flex items-start space-x-4 flex-1">
+                <div className="flex flex-col sm:flex-row items-start gap-4">
                     <img
                       src={getImageUrl(request.student?.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
                       alt={request.student?.name}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-gray-200"
+                      className="w-14 h-14 rounded-full object-cover border-2 border-gray-200 flex-shrink-0"
                       onError={(e) => {
                         e.target.src = "https://cdn-icons-png.flaticon.com/512/3135/3135768.png";
                       }}
                     />
                     <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-3">
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap items-center gap-2">
                           <h3 className="text-xl font-semibold text-gray-900">
                             {request.student?.name}
                           </h3>
@@ -142,7 +142,7 @@ const TeacherRequests = () => {
                         </div>
                         
                         {request.status === 'pending' && (
-                          <div className="flex space-x-3">
+                          <div className="flex flex-wrap gap-2">
                             <button
                               onClick={() => handleAcceptRequest(request._id)}
                               disabled={processingId === request._id}

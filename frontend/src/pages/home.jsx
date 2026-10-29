@@ -38,14 +38,14 @@ const Home = () => {
         <div className="absolute inset-0 bg-black opacity-20"></div>
 
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
                
               <span className="block text-yellow-400">Find My Tutor</span>
             </h1>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10 px-4">
               {user ? (
                 <Link 
                   to={user.role === 'teacher' ? '/teacher-dashboard' : '/student-dashboard'} 
@@ -203,7 +203,7 @@ const Home = () => {
                 </Link>
               </div>
               
-              <div className="mt-12 flex justify-center items-center space-x-8 text-blue-200">
+              <div className="mt-10 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-blue-200">
                 <div className="flex items-center">
                   <Star className="w-5 h-5 text-yellow-400 mr-2" />
                   <span>4.9/5 Rating</span>

@@ -73,7 +73,7 @@ const AboutUs = () => {
   return (
     <div className="font-sans text-gray-800 overflow-x-hidden">
       {/* Hero Section */}
-<div className="min-h-[45vh] bg-gradient-to-br from-purple-600 to-purple-900 flex items-center justify-center relative overflow-hidden text-white text-center">
+<div className="min-h-[45vh] bg-gradient-to-br from-purple-600 to-purple-900 flex items-center justify-center relative overflow-hidden text-white text-center pt-16">
   {/* Subtle dotted background */}
   <div className="absolute inset-0 opacity-5">
     <div
@@ -87,7 +87,7 @@ const AboutUs = () => {
 
   {/* Main content */}
   <div className="relative z-10 max-w-2xl px-5">
-    <h1 className="text-5xl md:text-6xl font-extrabold mb-3 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+    <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-3 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
       About Find My Tutor
     </h1>
     <div className="text-base italic opacity-80">
@@ -106,24 +106,24 @@ const AboutUs = () => {
 
 
       {/* Navigation */}
-      <nav className="sticky top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-200 py-4">
-        <div className="max-w-6xl mx-auto px-5 flex justify-center gap-4 flex-wrap">
-          <a href="#overview" className="px-6 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg font-medium">
+      <nav className="sticky top-0 bg-white/95 backdrop-blur-md z-40 border-b border-gray-200 py-3">
+        <div className="max-w-6xl mx-auto px-4 flex justify-start sm:justify-center gap-2 flex-wrap overflow-x-auto">
+          <a href="#overview" className="px-4 py-2 text-sm bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
             Overview
           </a>
-          <a href="#features" className="px-6 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg font-medium">
+          <a href="#features" className="px-4 py-2 text-sm bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
             Features
           </a>
-          <a href="#team" className="px-6 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg font-medium">
+          <a href="#team" className="px-4 py-2 text-sm bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
             Team
           </a>
-          <a href="#mission" className="px-6 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg font-medium">
+          <a href="#mission" className="px-4 py-2 text-sm bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
             Mission
           </a>
-          <a href="#technology" className="px-6 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg font-medium">
+          <a href="#technology" className="px-4 py-2 text-sm bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
             Technology
           </a>
-          <a href="#contact" className="px-6 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg font-medium">
+          <a href="#contact" className="px-4 py-2 text-sm bg-gray-100 text-gray-600 rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
             Contact
           </a>
         </div>
@@ -135,7 +135,7 @@ const AboutUs = () => {
         className={`about-section py-20 transition-all duration-700 ${isVisible.overview ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
             Platform Overview
           </h2>
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -170,7 +170,7 @@ const AboutUs = () => {
         className={`about-section py-20 bg-gradient-to-br from-gray-50 to-gray-100 transition-all duration-700 ${isVisible.features ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
             Key Features
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -191,7 +191,7 @@ const AboutUs = () => {
         className={`about-section py-20 transition-all duration-700 ${isVisible.team ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
             Meet the Team
           </h2>
           <p className="text-center text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -220,11 +220,11 @@ const AboutUs = () => {
         className={`about-section py-20 bg-gradient-to-br from-gray-50 to-gray-100 transition-all duration-700 ${isVisible.mission ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
             Our Mission
           </h2>
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div className="relative bg-white p-12 rounded-3xl shadow-xl">
+            <div className="relative bg-white p-6 sm:p-12 rounded-3xl shadow-xl">
               <div className="absolute -top-4 left-8 text-9xl text-purple-600 opacity-20 font-serif">"</div>
               <blockquote className="relative z-10 text-2xl leading-relaxed italic text-gray-700">
                 To democratize access to quality education by creating a transparent, 
@@ -265,7 +265,7 @@ const AboutUs = () => {
         className={`about-section py-20 transition-all duration-700 ${isVisible.technology ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-purple-900 bg-clip-text text-transparent">
             Technology Stack
           </h2>
           <div className="grid md:grid-cols-2 gap-16">
@@ -343,7 +343,7 @@ const AboutUs = () => {
         className={`about-section py-20 bg-gradient-to-br from-purple-600 to-purple-900 text-white transition-all duration-700 ${isVisible.contact ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-12 text-white">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-center mb-12 text-white">
             Get in Touch
           </h2>
           <div className="grid md:grid-cols-2 gap-16">
@@ -370,10 +370,10 @@ const AboutUs = () => {
                 your expertise, Kurukulam welcomes you to our growing community.
               </p>
               <div className="flex flex-col gap-4">
-                <button className="px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg">
+                <button className="w-full px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
                   Find a Tutor
                 </button>
-                <button className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300 hover:-translate-y-1 text-lg">
+                <button className="w-full px-8 py-4 bg-transparent text-white border-2 border-white rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300 text-lg">
                   Become a Tutor
                 </button>
               </div>

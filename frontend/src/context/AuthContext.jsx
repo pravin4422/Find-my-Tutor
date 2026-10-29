@@ -1,7 +1,16 @@
 import React, { createContext, useState, useEffect } from 'react';
 import API from '../api/axios';
 
-const AuthContext = createContext();
+const AuthContext = createContext({
+  user: null,
+  login: async () => {},
+  logout: () => {},
+  updateUser: () => {},
+  isAuthenticated: false,
+  isTeacher: false,
+  isStudent: false,
+  loading: true,
+});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);

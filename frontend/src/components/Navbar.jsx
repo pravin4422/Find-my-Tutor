@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-blue-600 flex-shrink-0 pl-0">
+          <Link to="/" className="text-xl sm:text-2xl font-bold text-blue-600 flex-shrink-0 pl-0">
             TutorFinder
           </Link>
 
@@ -157,18 +157,18 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          <div className="px-4 py-3 space-y-2">
+        <div className="md:hidden bg-white shadow-md border-t border-gray-100">
+          <div className="px-4 py-3 space-y-1">
             <Link
               to="/"
-              className="block text-gray-700 hover:text-blue-600"
+              className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/aboutus"
-              className="block text-gray-700 hover:text-blue-600"
+              className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
@@ -179,7 +179,7 @@ const Navbar = () => {
                 {user?.role === "student" && (
                   <Link
                     to="/teachers"
-                    className="block text-gray-700 hover:text-blue-600"
+                    className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Browse Tutors
@@ -189,7 +189,7 @@ const Navbar = () => {
                 {user?.role === "teacher" && (
                   <Link
                     to="/teacher-dashboard"
-                    className="block text-gray-700 hover:text-blue-600"
+                    className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Dashboard
@@ -199,27 +199,25 @@ const Navbar = () => {
                 {user?.role === "student" && (
                   <Link
                     to="/student-dashboard"
-                    className="block text-gray-700 hover:text-blue-600"
+                    className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Dashboard
                   </Link>
                 )}
 
-
-
                 {user?.role === "teacher" && (
                   <>
                     <Link
                       to="/teacher-requests"
-                      className="block text-gray-700 hover:text-blue-600"
+                      className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Requests
                     </Link>
                     <Link
                       to="/my-students"
-                      className="block text-gray-700 hover:text-blue-600"
+                      className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       My Students
@@ -230,17 +228,17 @@ const Navbar = () => {
                 {/* Profile in mobile menu */}
                 <Link
                   to="/profile"
-                  className="flex items-center gap-3 px-3 mt-2 hover:bg-gray-50 rounded-md py-2"
+                  className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <img
                     key={profilePicKey}
                     src={profilePic}
                     alt="Profile"
-                    className="w-10 h-10 rounded-full object-cover border border-blue-400"
+                    className="w-9 h-9 rounded-full object-cover border border-blue-400 flex-shrink-0"
                     onError={() => setImageError(true)}
                   />
-                  <span className="text-gray-700 font-medium">
+                  <span className="text-gray-700 font-medium truncate">
                     {user?.name || "User"}
                   </span>
                 </Link>
@@ -259,14 +257,14 @@ const Navbar = () => {
               <>
                 <Link
                   to="/login"
-                  className="block text-gray-700 hover:text-blue-600"
+                  className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="block text-gray-700 hover:text-blue-600"
+                  className="block bg-blue-600 text-white px-3 py-2 rounded-md font-medium hover:bg-blue-700 text-center mt-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Register

@@ -109,7 +109,7 @@ const StudentDashboard = () => {
       
       {/* Header Section */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pt-20">
           <div className="flex items-center">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
@@ -126,7 +126,7 @@ const StudentDashboard = () => {
               </div>
             </div>
             <div className="ml-6">
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2">{user?.name}</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-1">{user?.name}</h1>
               <p className="text-gray-600 text-lg">Ready to continue your learning journey ✨</p>
             </div>
           </div>
@@ -135,7 +135,7 @@ const StudentDashboard = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 -mt-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 relative z-10">
           <StatCard
             icon={MessageSquare}
             title="Total Requests"

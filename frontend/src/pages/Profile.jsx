@@ -139,17 +139,17 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white mb-8 rounded-2xl shadow-xl overflow-hidden border border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <div className="relative">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-4">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                <div className="relative flex-shrink-0">
                   <img
                     src={imagePreview || getImageUrl(user.profilePicture) || "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"}
                     alt={user.name}
-                    className="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white shadow-lg object-cover"
                     onError={(e) => {
                       e.target.src = "https://cdn-icons-png.flaticon.com/512/3135/3135768.png";
                     }}
@@ -158,22 +158,22 @@ const Profile = () => {
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                 </div>
-                <div className="ml-6">
-                  <h1 className="text-4xl font-bold mb-2">{user.name}</h1>
-                  <p className="text-blue-100 text-lg">{user.email}</p>
-                  <span className="inline-flex items-center mt-3 px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-green-400 to-blue-400 text-gray-900 shadow-lg">
+                <div className="text-center sm:text-left sm:ml-2">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-1">{user.name}</h1>
+                  <p className="text-blue-100 text-sm sm:text-lg break-all">{user.email}</p>
+                  <span className="inline-flex items-center mt-2 px-4 py-1.5 rounded-full text-sm font-semibold bg-gradient-to-r from-green-400 to-blue-400 text-gray-900 shadow-lg">
                     Student
                   </span>
                 </div>
               </div>
 
-              <div>
+              <div className="flex-shrink-0">
                 {!isEditing ? (
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="group inline-flex items-center px-8 py-3 bg-white text-blue-600 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl"
+                    className="group inline-flex items-center px-5 py-2.5 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl"
                   >
-                    <svg className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
                     Edit Profile
@@ -204,7 +204,7 @@ const Profile = () => {
         </div>
 
         {/* Profile Content */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border border-gray-100">
           {error && (
             <div className="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
               <p className="font-medium">Error:</p>
